@@ -111,8 +111,8 @@ describe("Blogs API resource", function(){
                 title: "Meow",
                 content: "meow meow",
                 author:{
-                    firstName : A,
-                    lastName : Cat
+                    firstName : "A",
+                    lastName : "Cat"
                 }
             };
 
@@ -130,10 +130,10 @@ describe("Blogs API resource", function(){
                 return BlogPost.findById(updateData.id);
             })
             .then(function(blog){
-                expect(blog.title).to.equal(content.title);
+                expect(blog.title).to.equal(updateData.title);
                 expect(blog.content).to.equal(updateData.content);
                 expect(blog.author.firstName).to.equal(updateData.author.firstName);
-                expect(blog.author.lastName).to.equal(content.author.lastName);
+                expect(blog.author.lastName).to.equal(updateData.author.lastName);
             });
         });
     });
